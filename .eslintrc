@@ -32,6 +32,7 @@
   "rules": {
     "prettier/prettier": ["error", {}, { "userPrettierrc": true }],
     "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
     "no-param-reassign": [
       "error",
       { "props": true, "ignorePropertyModificationsFor": ["state"] }
