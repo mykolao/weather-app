@@ -1,3 +1,4 @@
+import Hidden from '@mui/material/Hidden';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 
@@ -12,9 +13,18 @@ export const Logo = () => {
       >
         {'<'}
       </Typography>
-      <Typography variant="h4" component="h1">
-        weather
-      </Typography>
+      {/* Desktop Logo */}
+      <Hidden smDown>
+        <Typography variant="h4" component="h1">
+          weather
+        </Typography>
+      </Hidden>
+      {/* Mobile Logo */}
+      <Hidden smUp>
+        <Typography variant="h4" component="h1">
+          w
+        </Typography>
+      </Hidden>
       <Typography
         variant="h4"
         component="span"
