@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
-import { theme } from 'theme/theme';
+import { theme } from 'mui/theme';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({
   children,
