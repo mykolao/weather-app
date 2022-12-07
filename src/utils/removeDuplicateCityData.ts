@@ -1,7 +1,7 @@
-import { CityData } from 'api/city/types';
+import { CityInfo } from 'types';
 
-export const removeDuplicateCityData = (data: CityData[]) => {
-  const uniqueData: CityData[] = [];
+export const removeDuplicateCityData = (data: CityInfo[]) => {
+  const uniqueData: CityInfo[] = [];
 
   data.forEach((entry) => {
     if (

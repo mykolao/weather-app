@@ -1,6 +1,6 @@
-import { CityData } from 'api/city/types';
+import { CityInfo } from 'types';
 
-export const getCityByQuery = (cities: CityData[], query: string) => {
+export const getCityByQuery = (cities: CityInfo[], query: string) => {
   const [queryName, queryCountry] = query.split(', ');
 
   if (!queryName || !queryCountry) return null;
