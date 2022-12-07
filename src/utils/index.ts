@@ -5,3 +5,4 @@ export { getCityByQuery } from 'utils/getCityByQuery';
 export { compareLocations } from 'utils/compareLocations';
 export { formatTemperature } from 'utils/formatTemperature';
 export { compareGeos } from 'utils/compareGeos';
+export { minMax } from 'utils/minMax';
