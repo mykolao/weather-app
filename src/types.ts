@@ -16,3 +16,12 @@ export interface WeatherData {
   description: string;
   icon: string;
 }
+
+export interface ForecastData {
+  timestamp: number;
+  temp: number;
+  date: string;
+  humidity: number;
+  pressure: number;
+  feels_like: number;
+}
