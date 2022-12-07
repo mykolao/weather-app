@@ -10,3 +10,16 @@ export interface WeatherResponse {
     icon: string;
   }[];
 }
+
+export interface ForecastResponse {
+  list: {
+    dt: number;
+    dt_txt: string;
+    main: {
+      temp: number;
+      humidity: number;
+      pressure: number;
+      feels_like: number;
+    };
+  }[];
+}
