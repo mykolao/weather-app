@@ -1,8 +1,11 @@
-import Hidden from '@mui/material/Hidden';
+import { useMediaQuery, useTheme } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 
 export const Logo = () => {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box display="flex" gap="3px" alignItems="center">
       <Typography
@@ -13,18 +16,9 @@ export const Logo = () => {
       >
         {'<'}
       </Typography>
-      {/* Desktop Logo */}
-      <Hidden smDown>
-        <Typography variant="h4" component="h1">
-          weather
-        </Typography>
-      </Hidden>
-      {/* Mobile Logo */}
-      <Hidden smUp>
-        <Typography variant="h4" component="h1">
-          w
-        </Typography>
-      </Hidden>
+      <Typography variant="h4" component="h1">
+        {isXs ? 'w' : 'weather'}
+      </Typography>
       <Typography
         variant="h4"
         component="span"
