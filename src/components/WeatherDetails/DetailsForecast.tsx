@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const DetailsForecast = ({ forecast }: Props) => {
-  const slicedForecast = forecast.slice(0, 12);
+  const slicedForecast = forecast.slice(0, 8);
 
   return (
     <CardContent>
@@ -18,7 +18,7 @@ export const DetailsForecast = ({ forecast }: Props) => {
         component="h3"
         color={theme.palette.grey.A400}
       >
-        36 Hour Forecast
+        24 Hour Forecast
       </Typography>
       <ForecastChart forecast={slicedForecast} />
     </CardContent>

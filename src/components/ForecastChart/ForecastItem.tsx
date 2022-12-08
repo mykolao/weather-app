@@ -52,7 +52,7 @@ export const ForecastItem = ({
   );
 
   return (
-    <Grid item lg={1} sm={2} xs={3}>
+    <Grid item lg={1.5} md={1.5} sm={1.5} xs={3}>
       <Box height={`${wrapperHeight}px`} sx={wrapperStyles}>
         <Box
           sx={{ ...boxStyles, backgroundColor: itemColor }}

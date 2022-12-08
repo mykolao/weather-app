@@ -10,19 +10,16 @@ interface Props {
 
 export const ForecastChart = ({ forecast }: Props) => {
   const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.down('lg'));
-  const isSm = useMediaQuery(theme.breakpoints.down('md'));
+  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const temperatures = forecast.map(({ temp }) => temp);
   const [min, max] = minMax(temperatures);
   const range = max - min;
 
   // Calculate chart scale using media queries
-  let scale = 0.5; // default value
+  let scale = 0.65; // default value
 
-  if (isMd) {
-    scale = isSm ? 0.35 : 0.45;
-  }
+  if (isXs) scale = 0.35;
 
   return (
     <Grid container spacing={0.5} mt={1}>
