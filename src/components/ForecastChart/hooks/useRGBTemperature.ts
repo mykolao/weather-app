@@ -53,20 +53,38 @@ export const useRGBTemperature = (temp: number) => {
   const neutral = [66, 66, 66]; // rgb of #424242
   const warm = [239, 108, 0]; //   rgb of #ef6c00
 
-  // limit check
-  if (temp === 0) return RGBToCss(neutral);
-  if (temp >= max) return RGBToCss(warm);
-  if (temp <= min) return RGBToCss(cold);
+  let RGBValues: number[] = [];
 
-  let res = neutral;
+  // limit check
+  if (temp === 0) RGBValues = neutral;
+  if (temp >= max) RGBValues = warm;
+  if (temp <= min) RGBValues = cold;
+
+  if (RGBValues.length) {
+    const CSSValue = RGBToCss(RGBValues);
+    return { CSSValue, RGBValues };
+  }
+
+  RGBValues = neutral;
 
   if (temp > 0) {
     // get gradient value from neutral to warm
-    res = getRGBGradientValue(neutral, warm, temp, halvedResolution);
-    return RGBToCss(res);
+    RGBValues = getRGBGradientValue(
+      neutral,
+      warm,
+      temp,
+      halvedResolution,
+    );
+  } else {
+    // get gradient value from neutral to cold
+    RGBValues = getRGBGradientValue(
+      neutral,
+      cold,
+      temp,
+      halvedResolution,
+    );
   }
+  const CSSValue = RGBToCss(RGBValues);
 
-  // get gradient value from neutral to cold
-  res = getRGBGradientValue(neutral, cold, temp, halvedResolution);
-  return RGBToCss(res);
+  return { CSSValue, RGBValues };
 };

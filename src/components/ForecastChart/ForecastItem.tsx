@@ -42,7 +42,7 @@ export const ForecastItem = ({
 }: Props) => {
   const itemHeight = 30;
 
-  const itemColor = useRGBTemperature(value.temp);
+  const { CSSValue: itemColor } = useRGBTemperature(value.temp);
   const itemValue = formatTemperature(value.temp);
 
   const { wrapperHeight, itemOffset } = useForecastItem(
