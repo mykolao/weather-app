@@ -15,7 +15,6 @@ const Component: FC<Props> = (props) => {
   const { searchQuery, searchResults, onCLick } = props;
 
   const [isDisabled, setIsDisabled] = useState(true);
-
   const [selectedCity, setSelectedCity] = useState<CityInfo | null>(
     null,
   );
@@ -24,24 +23,18 @@ const Component: FC<Props> = (props) => {
 
   // Button activation and city selection logic
   useEffect(() => {
-    // Get city data by query
     const city = getCityByQuery(searchResults, searchQuery);
 
-    // Do nothing if already enabled
     if (city && selectedCity && compareCities(city, selectedCity))
-      return;
+      return; // Do nothing if already enabled
 
     if (city) {
-      // Set new selected city
-      setSelectedCity(city);
-
-      // Enable button if not
-      if (isDisabled) setIsDisabled(false);
+      setSelectedCity(city); // Select new city
+      if (isDisabled) setIsDisabled(false); // Enable button if not
       return;
     }
 
-    // Disable button if not
-    if (!isDisabled) setIsDisabled(true);
+    if (!isDisabled) setIsDisabled(true); // Disable button if not
   }, [
     searchResults,
     searchQuery,
@@ -52,7 +45,6 @@ const Component: FC<Props> = (props) => {
 
   const handleClick = () => {
     if (selectedCity) addCity(selectedCity);
-
     onCLick();
   };
 
