@@ -1,3 +1,4 @@
+import inject from '@rollup/plugin-inject';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import envPlugin from 'vite-plugin-environment';
@@ -12,4 +13,13 @@ export default defineConfig({
     eslint({ cache: true }),
     envPlugin('all'),
   ],
+  build: {
+    rollupOptions: {
+      plugins: [
+        inject({
+          process: 'process',
+        }),
+      ],
+    },
+  },
 });

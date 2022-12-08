@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "@reduxjs/toolkit": "^1.9.1",
+    "@rollup/plugin-inject": "^5.0.2",
     "axios": "^1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
