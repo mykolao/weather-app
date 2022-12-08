@@ -1,0 +1,12 @@
+{
+  "testEnvironment": "jsdom",
+  "roots": ["src"],
+  "testPathIgnorePatterns": ["/node_modules/"],
+  "setupFilesAfterEnv": ["<rootDir>/jest-setup.ts"],
+  "modulePaths": ["<rootDir>/src/"],
+  "transform": {
+    "^.+\\.tsx$": "ts-jest",
+    "^.+\\.ts$": "ts-jest"
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx"]
+}
