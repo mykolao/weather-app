@@ -1,16 +1,16 @@
 import { CityInfo } from 'types';
+import { compareCities } from 'utils/compareCities';
 
 export const removeDuplicateCityData = (data: CityInfo[]) => {
   const uniqueData: CityInfo[] = [];
 
-  data.forEach((entry) => {
+  data.forEach((city) => {
     if (
-      !uniqueData.find(
-        ({ name, country }) =>
-          name === entry.name && country === entry.country,
+      !uniqueData.find((uniqueCity) =>
+        compareCities(city, uniqueCity),
       )
     ) {
-      uniqueData.push(entry);
+      uniqueData.push(city);
     }
   });
 
