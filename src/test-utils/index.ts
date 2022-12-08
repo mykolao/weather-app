@@ -9,4 +9,5 @@ const customRender = (
 ) => render(ui, { wrapper: TestWrapper, ...options });
 
 export * from '@testing-library/react';
+export { testLocation } from 'test-utils/testLocation';
 export { customRender as render };
