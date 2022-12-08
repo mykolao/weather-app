@@ -1,8 +1,10 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { useForecastItem } from 'components/ForecastChart/useForecastItem';
-import { useRGBTemperature } from 'components/ForecastChart/useRGBTemperature';
+import {
+  useForecastItem,
+  useRGBTemperature,
+} from 'components/ForecastChart/hooks';
 import { customStyles } from 'mui/customStyles';
 import { ForecastData } from 'types';
 import { formatTemperature } from 'utils';
