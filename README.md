@@ -1,5 +1,7 @@
 # Weather App
 
+![image](https://user-images.githubusercontent.com/57754283/206582618-83194cae-0bd5-4e5c-bd15-ef1fba3d6e60.png)
+
 **`Features:`**
 
 - Autocomplete search
