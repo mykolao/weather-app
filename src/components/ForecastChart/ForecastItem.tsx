@@ -14,12 +14,14 @@ interface Props {
   scale: number;
 }
 
-const wrapperStyles = customStyles({
+const wrapperStyles = customStyles((theme) => ({
+  bgcolor: theme.palette.action.disabledBackground,
+  borderRadius: 1.5,
   width: '100%',
   display: 'flex',
   alignItems: 'end',
   mb: 1,
-});
+}));
 
 const boxStyles = customStyles({
   display: 'flex',
@@ -27,7 +29,7 @@ const boxStyles = customStyles({
   alignItems: 'center',
   width: '100%',
   padding: '3px 6px',
-  borderRadius: 1.5,
+  borderRadius: 'inherit',
 });
 
 export const ForecastItem = ({
