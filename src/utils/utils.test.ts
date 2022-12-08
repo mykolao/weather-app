@@ -51,10 +51,10 @@ describe('Utility Functions', () => {
     const c3: CityInfo = { ...c1, lat: 2 };
     const c4: CityInfo = { ...c1, lon: 2 };
     const c5: CityInfo = { ...c1, name: 'unique' };
-    const c6: CityInfo = { ...c1, country: 'unique' };
+    const c6: CityInfo = { ...c1, lat: 2, country: 'unique' };
 
     const inputData = [c1, c2, c3, c4, c5, c6];
-    const expectedOutput = [c1, c3, c4, c5, c6];
+    const expectedOutput = [c1, c6];
 
     expect(removeDuplicateCityData(inputData)).toEqual(
       expectedOutput,
@@ -134,9 +134,10 @@ describe('Utility Functions', () => {
     };
 
     expect(compareCities(c1, c1)).toBe(true);
-    expect(compareCities(c1, c2)).toBe(false);
-    expect(compareCities(c1, c3)).toBe(false);
-    expect(compareCities(c1, c4)).toBe(false);
+    expect(compareCities(c1, c2)).toBe(true);
+    expect(compareCities(c1, c3)).toBe(true);
+    expect(compareCities(c1, c4)).toBe(true);
+    expect(compareCities(c2, c3)).toBe(false);
   });
 
   // compareGeos
