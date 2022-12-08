@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 
 import { CssBaseline } from '@mui/material';
+import App from 'components/App';
 import ThemeProvider from 'mui';
 import ReactDOM from 'react-dom/client';
 import StoreProvider from 'store';
@@ -17,7 +18,7 @@ ReactDOM.createRoot(rootElement).render(
     <ThemeProvider>
       <StoreProvider>
         <CssBaseline />
-        App
+        <App />
       </StoreProvider>
     </ThemeProvider>
   </StrictMode>,
