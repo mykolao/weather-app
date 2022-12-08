@@ -12,7 +12,7 @@ export const ForecastChart = ({ forecast }: Props) => {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const temperatures = forecast.map(({ temp }) => temp);
+  const temperatures = forecast.map(({ temp }) => Math.round(temp));
   const [min, max] = minMax(temperatures);
   const range = max - min;
 
